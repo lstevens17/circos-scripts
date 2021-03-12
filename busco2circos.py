@@ -13,7 +13,7 @@ def print_karyotype_file(fasta, species, minlen):
 			for record in SeqIO.parse(fasta, "fasta"):
 				if len(record.seq) > minlen:
 					if species == "sp1":
-						outfile.write("%s\t%s\t%s\t%s\t%s\t%s\t%s\n" % ("chr", "-", record.id, seqnum, "0", len(record.seq), seqnum))
+						outfile.write("%s\t%s\t%s\t%s\t%s\t%s\t%s\n" % ("chr", "-", record.id, record.id, "0", len(record.seq), seqnum))
 						chr2num[record.id] = seqnum
 						seqnum += 1
 					else:
